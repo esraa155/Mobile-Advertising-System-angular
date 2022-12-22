@@ -1,0 +1,16 @@
+.cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .card {
+    max-width: 800px;
+    min-width: 800px;
+    margin-bottom: -50px;
+  }
+
+  .form-field-one-third{
+    margin-right: 10px;
+  }

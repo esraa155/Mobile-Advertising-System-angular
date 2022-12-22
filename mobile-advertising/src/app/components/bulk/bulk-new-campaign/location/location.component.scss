@@ -1,0 +1,16 @@
+.expansion-panel-content{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.one-third{
+    flex: 1 0 30%;
+    margin-right: 10px;
+}
+
+.last-item{
+    flex: 1 0 30%;
+}

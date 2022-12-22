@@ -1,0 +1,47 @@
+
+  .example-action-buttons {
+    padding-bottom: 20px;
+    color: black;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+
+body{
+  margin-top: 50px;
+  margin-right: 200px ;
+  margin-left: 200px;
+}
+
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.action-button{
+  min-width: 20px;
+  max-width: 20px;
+}
+
+.mat-icon{
+  height:20px !important;
+  width:20px !important;
+  font-size:20px !important;
+  margin: -10px;
+}

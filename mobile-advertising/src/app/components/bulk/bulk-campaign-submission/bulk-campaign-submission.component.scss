@@ -1,0 +1,40 @@
+
+
+  
+  
+  .cards-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .card {
+    max-width: 800px;
+    min-width: 800px;
+    margin-bottom: 50px;
+  }
+  
+  .form-field-one-third{
+    margin-right: 10px;
+  }
+
+  .action-button{
+    min-width: 40px;
+    max-width: 40px;
+    margin-bottom: 20px;
+    min-height: 40px;
+    max-height: 40px;
+    flex: 1 0 5%;
+}
+
+.mat-icon{
+  height:25px !important;
+    width:25px !important;
+    margin: -10px;
+}
+  
+.back-button:hover{
+  background-color: #FF6666;
+  color: white;
+}

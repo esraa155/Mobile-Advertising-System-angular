@@ -1,0 +1,145 @@
+<div class="cards-container">    
+  <mat-card fxFlexAlign="center" [fxFlex] class="card" >
+
+      <mat-card-title>SMS Messages Criteria</mat-card-title>
+
+
+      <mat-card-content fxLayout="column" fxFlexAlign="center">
+
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Campaign Account</mat-label>
+              <input type="string" matInput [formControl]="campaignAccountFormControl">
+              <mat-error *ngIf="campaignAccountFormControl.hasError('required')">
+                Campaign Account is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          
+          
+
+            <mat-form-field class="example-form-field" appearance="fill">
+              <mat-label>Number of SMS Campaigns</mat-label>
+              <input required matInput type="number" [(ngModel)]="numberOfSMSCampaigns">
+              <button *ngIf="numberOfSMSCampaigns" matSuffix mat-icon-button aria-label="Clear" (click)="numberOfSMSCampaigns=0">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+            
+
+            <mat-radio-group name="fieldName" ngDefaultControl fxFlexAlign="stretch" style= "margin-bottom: 20px;" appearance="fill" aria-label="Select an option">
+              <mat-label style="margin-right: 79px;margin-top: 10px;">Do you want a single SMS Body?</mat-label>
+              <mat-radio-button name="fieldName" ngDefaultControl style="margin-right:20px;" [(ngModel)]="isSingleSMSBody" value="1">Yes</mat-radio-button>
+              <mat-radio-button  name="fieldName" ngDefaultControl value="2" [(ngModel)]="isSingleSMSBody">No</mat-radio-button>
+            </mat-radio-group> 
+                         
+
+
+          <mat-form-field *ngIf="isSingleSMSBody === '1'"  fxFlexAlign="stretch" appearance="fill">
+              <mat-label>Campagin SMS Body</mat-label>
+                  <textarea  matInput [(ngModel)]="singleSMSBody"
+                  style="margin: 0px;"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="10"
+                          cdkAutosizeMaxRows="40"></textarea>
+          </mat-form-field>
+
+          <mat-radio-group name="fieldName" ngDefaultControl fxFlexAlign="stretch" style= "margin-bottom: 20px;" appearance="fill" aria-label="Select an option">
+              <mat-label style="margin-right: 30px;margin-top: 10px;">Do you want a single SMS sender name?</mat-label>
+              <mat-radio-button name="fieldName" ngDefaultControl style="margin-right:20px;" [(ngModel)]="isSingleSMSSenderName" value="1">Yes</mat-radio-button>
+              <mat-radio-button  name="fieldName" ngDefaultControl value="2" [(ngModel)]="isSingleSMSSenderName">No</mat-radio-button>
+          </mat-radio-group> 
+
+          <app-sender-name *ngIf="isSingleSMSSenderName === '1'" style="margin-bottom: -20px;"></app-sender-name>
+                     
+          <button mat-stroked-button class="primary-button" style="flex: 1 0 8%;height: 54px;max-width: 50px;" fxFlexAlign="center" (click)="onCriteriaSaved($event)">Save</button> 
+      </mat-card-content> 
+
+  </mat-card> 
+
+  <mat-card fxFlexAlign="center" *ngIf="smsCard" [fxFlex] class="card" >
+      <mat-card-title>SMS Messages Details</mat-card-title>
+
+      <mat-card-content style= "margin-top: 30px;" fxLayout="column" fxFlexAlign="center">
+
+          <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- SMS ID -->
+              <ng-container matColumnDef="smsID">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.smsID}} </td>
+              </ng-container>
+            
+              <!-- Sender Name -->
+              <ng-container matColumnDef="senderName">
+                <th mat-header-cell *matHeaderCellDef> Sender Name </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field style="width:130px">
+                      <input matInput name="name" [(ngModel)]="element.senderName">
+                  </mat-form-field>
+                  </td>
+              </ng-container>
+            
+              <!-- Body -->
+              <ng-container matColumnDef="body">
+                <th mat-header-cell *matHeaderCellDef> Body </th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field style="width:370px; margin-top: 20px;margin-left: 10px;margin-right: 10px;" fxFlexAlign="stretch" appearance="fill" >
+                          <textarea  matInput [(ngModel)] = "element.body"
+                          style="margin: 0px;"
+                                  cdkTextareaAutosize
+                                  #autosize="cdkTextareaAutosize"
+                                  cdkAutosizeMinRows="10"
+                                  cdkAutosizeMaxRows="40"
+                                  fxFlexAlign="stretch"></textarea>
+
+                                  <app-sms-footer [smsBody]="element.body"></app-sms-footer>
+                          
+                  </mat-form-field>
+                  
+                </td>
+              </ng-container>
+            
+              <!-- Date -->
+              <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td class="datetime-container" mat-cell *matCellDef="let element">
+                  <mat-form-field style="width:150px; margin-left: 10px;margin-right: 10px;"  appearance="fill" class="example-form-field">
+                      <mat-label>Choose a date</mat-label>
+                      <input matInput [matDatepicker]="datepicker"  min="{{currentDate | date:'yyyy-MM-dd'}}">
+                      <mat-datepicker-toggle matSuffix [for]="datepicker" ></mat-datepicker-toggle>
+                      <mat-datepicker #datepicker>
+                        <mat-datepicker-actions>
+                          <button mat-button matDatepickerCancel>Cancel</button>
+                          <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                      </mat-datepicker>
+                    </mat-form-field>
+
+                  <br>
+
+                  <mat-form-field style="width:80%;margin-left: 10px;"  class = "date-picker">  
+                      <mat-label>Choose time</mat-label>
+                      <input matInput  mdc-datetime-picker="" date="false" time="true" placeholder="Time" minutes="true"
+                      min-date="minDate" type="text" id="time"  short-time="true" ng-model="time" [ngxTimepicker]="picker3">
+                      <ngx-material-timepicker #picker3 [timepickerClass]="'custome-class'" ></ngx-material-timepicker>
+                   </mat-form-field >
+                  </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            
+
+      </mat-card-content>
+
+  </mat-card>
+  
+  <div style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
+      <button *ngIf="smsCard" mat-stroked-button class="primary-button"  [routerLink]="'/home'">Create</button>
+      <button mat-stroked-button class="primary-button" [routerLink]="'/new-bulk-campaign'">Back</button>
+  </div>
+</div>

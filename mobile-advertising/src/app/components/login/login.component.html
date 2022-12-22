@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Mobile Advertising
+    </title>
+    <body class= "body">
+        <div class= "container">
+            <img class="orange-logo" src= "../../../../assets/icons/orange_logo.svg">
+            
+            <div>
+                <p class="title">
+                    Login to your account
+                </p>
+            </div>
+            
+            <form novalidate [formGroup]="userForm" (ngSubmit)="onSubmit()" #f='ngForm' class= "form">
+                <div class = "username">
+                    <div class= "icon-container">
+                        <img class="username-icon" src="../../../assets/icons/general/username.svg">
+                    </div>
+                    <input  matInput formControlName="username" type="text" id="username" name="username" class="input" ng-model="username" placeholder="Username" required><br>
+                </div>
+                
+                <div class = "password">
+                    <div class= "icon-container">
+                        <img class="username-icon" src="../../../assets/icons/general/password.svg">
+                    </div>
+                    <input  matInput formControlName="password"  type="password" id="password" name="password" class="input" placeholder="Password" required>
+                    <mat-error>
+                     
+                    </mat-error>
+                </div>
+
+                <button [disabled]="!f.valid" class="login">
+                    LOGIN
+                </button>
+                
+            </form>
+    
+            
+    
+        
+        </div>     
+
+    </body>
+
+</html>
+

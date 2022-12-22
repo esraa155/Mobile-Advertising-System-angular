@@ -1,0 +1,16 @@
+<ng-container>
+  <mat-card-content style= "display: flex;flex-direction: row;flex-wrap: wrap; justify-content: center;align-items: center;">
+    <mat-form-field style="flex: 1 0 92%; margin-right: 10px;" class="col-lg-5" class ="form-field-full" appearance="fill">
+        <mat-label>Campagin SMS Sender Name:</mat-label>
+        <input type="text" matInput formControlName="senderName" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of senderName_FilteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <button matTooltip="Add new sender name" class="action-button" style="flex: 1 0 5%; margin-bottom: 15px;" mat-button   (click)="openDialog()"> <mat-icon class="mat-icon" >add_circle</mat-icon> </button>
+      
+</mat-card-content> 
+</ng-container>

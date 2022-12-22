@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Home
+    </head>
+
+    <body>
+        <app-header-home>
+        </app-header-home>
+
+        <div class="containers">
+
+
+            <div class = "container">
+                <p class="container-title">
+                    Bulk Campaigns
+                </p>
+                <hr class = "title-line">
+                <div class="buttons-container">
+                    <div class ="button-and-icon" [routerLink]="'/new-bulk-campaign'">
+                        <img class = "icon" src = "../../../assets/icons/campaigns/analyze.svg">
+                        <p class = "button"> New Campaign</p>
+                    </div>
+                    <div class ="button-and-icon" [routerLink]="'/BulkReport'">
+                        <img class = "icon" src = "../../../assets/icons/campaigns/report.svg">
+                        <p class = "button">Report</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <p class="container-title">
+                    Real-Time Campaigns
+                </p>
+                <hr class = "title-line">
+                <div class="buttons-container">
+                    <div class ="button-and-icon" [routerLink]="'/real-time-newcampaign'">
+                        <img class = "icon" src = "../../../assets/icons/campaigns/real-time.svg">
+                        <p class = "button"> New Campaign</p>
+                    </div>
+                    <div class ="button-and-icon"  [routerLink]="'/real-time-report'">
+
+                        <img class = "icon" src = "../../../assets/icons/campaigns/report.svg">
+                        <p class = "button">Report</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "container">
+                <p class="container-title">
+                    Analyze & Export
+                </p>
+                <hr class = "title-line">
+            </div>
+            
+
+        </div>
+
+        
+
+    </body>
+
+</html>
+

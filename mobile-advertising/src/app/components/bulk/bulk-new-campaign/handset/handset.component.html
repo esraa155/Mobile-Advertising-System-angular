@@ -1,0 +1,58 @@
+<ng-container [formGroup] = "bulkForm">
+  <div class="form">
+
+    <mat-form-field class="half-width" appearance="fill" >
+      <mat-label>Manufacturer</mat-label>
+      <input type="text" matInput [formControl]="manufacturer" [matAutocomplete]="auto_manufacturer">
+      <mat-autocomplete #auto_manufacturer="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of manufacturer_FilteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="half-width" appearance="fill">
+      <mat-label>Model</mat-label>
+      <input type="text" matInput [formControl]="model" [matAutocomplete]="auto_model">
+      <mat-autocomplete #auto_model="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of model_FilteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="one-third" appearance="fill">
+      <mat-label>Operating System</mat-label>
+      <input type="text" matInput [formControl]="operatingSystem" [matAutocomplete]="auto_operating_system">
+      <mat-autocomplete #auto_operating_system="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of operatingSystem_FilteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="one-third" appearance="fill">
+      <mat-label>Device Type</mat-label>
+      <input type="text" matInput [formControl]="deviceType" [matAutocomplete]="auto_device_type">
+      <mat-autocomplete #auto_device_type="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of deviceType_FilteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+
+    <mat-form-field class="one-third" appearance="fill">
+      <mat-label>Network Technology</mat-label>
+      <input type="text" matInput [formControl]="networkTechnology" [matAutocomplete]="auto_network_technology">
+      <mat-autocomplete #auto_network_technology="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of networkTechnology_FilteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    
+     
+  </div>
+</ng-container>

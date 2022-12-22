@@ -1,0 +1,18 @@
+.side{
+    color: white;
+    background-color:black;
+}
+.sidenav-container{
+    margin-top: 70px;
+    position: absolute;
+    height: 1000px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    width:150px ;
+    color: white;
+}
+.icon{
+    height: 30px;
+    width: 25px;
+}

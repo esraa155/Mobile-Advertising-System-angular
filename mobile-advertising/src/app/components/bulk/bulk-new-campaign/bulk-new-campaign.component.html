@@ -1,0 +1,134 @@
+<mat-toolbar><div class="logo" [routerLink]="'/home'">
+    <img class="orange-logo" src= "../../../../assets/icons/orange_logo.svg">
+  </div>
+    <label style="color :white;">Mobile Advertising System - Segmentaion</label>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="icon" aria-label="Example icon-button with heart icon" matTooltip="Undo">
+      <mat-icon>undo</mat-icon>
+    </button>
+    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon" matTooltip="Redo">
+      <mat-icon>redo</mat-icon>
+    </button>
+    <button mat-icon-button class="icon" aria-label="Example icon-button with share icon" matTooltip="Reset Criteria">
+      <img class="reset-icon" src= "../../../assets/icons/general/reset.svg">
+    </button>
+</mat-toolbar>
+
+
+
+
+
+
+
+<div class = "selection-criteria">
+  <div class="example-action-buttons">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  
+  <ng-container [formGroup]= "bulkForm" >
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel [expanded]="true"> 
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Location
+          </mat-panel-title>
+          <mat-panel-description>
+            Choose a location
+            <mat-icon> location_on</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+  
+         <!-- Location Component -->       
+        <app-bulk-location formGroupName="location"></app-bulk-location>    
+  
+      </mat-expansion-panel>
+    
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Handset
+          </mat-panel-title>
+          <mat-panel-description>
+            Choose a handset
+            <mat-icon>mobile_friendly</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+  
+        <!-- Handset Component --> 
+        <app-bulk-handset formGroupName="handSet"></app-bulk-handset>
+  
+      </mat-expansion-panel>
+  
+  
+  
+      <div style="display: flex;">
+        <mat-expansion-panel style="flex: 1 1 0px;margin-right: 10px;" [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              User Activity
+            </mat-panel-title>
+            <mat-panel-description>
+              Choose user activity criteria
+              <mat-icon>mobile_friendly</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+  
+          <!-- User Activity Component --> 
+          <app-bulk-user-activity formGroupName="userActivity"></app-bulk-user-activity>
+         
+        </mat-expansion-panel>
+  
+        <mat-expansion-panel style="flex: 1 1 0px;" [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              User Plan
+            </mat-panel-title>
+            <mat-panel-description>
+              Choose plan type
+              <mat-icon>mobile_friendly</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+  
+  
+           <!-- User Plan Component --> 
+           <app-bulk-user-plan formGroupName="userPlan"></app-bulk-user-plan>
+                 
+        </mat-expansion-panel>
+      </div>
+      
+  
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              ARPU (EGP)
+            </mat-panel-title>
+            <mat-panel-description>
+              Choose a valid ARPU between {{minARPU}} EGP and {{maxARPU}} EGP
+              <mat-icon> attach_money</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+  
+  
+          <!-- ARPU Component --> 
+          <app-bulk-arpu formGroupName="arpu"></app-bulk-arpu>
+  
+       
+        </mat-expansion-panel>
+    </mat-accordion>
+  
+    <div class = "next-button-container">
+      <button mat-stroked-button class="primary-button" [routerLink]="'/bulk-campaign-submission'">Next</button>
+    </div>
+  </ng-container>
+  
+
+</div>
+
+
+
+
+
+
+
+  

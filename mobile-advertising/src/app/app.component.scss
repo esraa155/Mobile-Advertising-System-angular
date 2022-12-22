@@ -1,0 +1,109 @@
+/* ink bar */
+::ng-deep .mat-ink-bar {
+    background-color: var(--primary-color,#ff6600) !important;
+    }
+
+
+/* checkbox */
+::ng-deep .mat-checkbox-checked.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #ff6600 !important;
+    }
+
+    .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #ff6600;
+     }
+}
+
+::ng-deep .mat-checkbox.mat-accent.mat-checkbox-indeterminate.mat-accent {
+  .mat-checkbox-ripple .mat-ripple-element {
+      background-color: #ff6600 !important;
+  }
+
+  .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+      background-color: #ff6600;
+   }
+}
+
+
+::ng-deep .mat-checkbox.mat-accent {
+    .mat-checkbox-ripple .mat-ripple-element  {
+        background-color: #ff6600 !important;
+    }
+}
+
+/* time picker */
+::ng-deep ngx-material-timepicker-content{
+    --body-background-color: #fff;
+    --primary-font-family: 'Roboto',sans-serif;
+    --button-color: #000000 !important;
+    --dial-active-color: #fff;
+    --dial-inactive-color: rgba(255, 255, 255, .5);
+    --dial-background-color:#000000 !important;
+    --dial-editable-active-color: #000000 !important;
+    --dial-editable-background-color: #fff;
+    --clock-face-time-active-color: #fff;
+    --clock-face-time-inactive-color: #6c6c6c;
+    --clock-face-inner-time-inactive-color: #929292;
+    --clock-face-time-disabled-color: #c5c5c5;
+    --clock-face-background-color: #f0f0f0;
+    --clock-hand-color: #ff6600 !important;
+  }
+  
+  /* radio button */
+  :host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle, .mat-radio-outer-circle {
+    border-color: black !important;
+    /* Sets outer circle & click effect color */
+}
+
+:host ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #ff6600 !important;
+    /* Sets inner circle color */
+}
+
+
+/* mat-input */
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: black   !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: black  !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: black  !important;
+  }
+
+
+  /*mat date picker */
+ 
+ ::ng-deep .mat-datepicker-toggle{
+    color:grey;
+ }
+
+
+
+ ::ng-deep .mat-calendar {
+    border-radius: 5px;
+}
+
+::ng-deep .mat-calendar-body-selected {
+    background: black;
+}
+
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    background-color: grey;
+  }
+
+::ng-deep .mat-calendar-body-cell-content .mat-focus-indicator .mat-calendar-body-today{
+    background-color: red;
+}
+
+::ng-deep  .mat-calendar-body-today.mat-calendar-body-selected, .mat-calendar-body-today.mat-calendar-body-selected {
+    box-shadow: unset;
+}

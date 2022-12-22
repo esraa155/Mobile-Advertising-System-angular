@@ -1,0 +1,16 @@
+.form {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .half-width {
+    width: 49%;
+  }
+  
+  .one-third { 
+    width: 32%;
+  }
+  

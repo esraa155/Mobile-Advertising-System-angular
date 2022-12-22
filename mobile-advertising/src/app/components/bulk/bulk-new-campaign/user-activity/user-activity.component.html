@@ -1,0 +1,23 @@
+<ng-container [formGroup]="bulkForm">
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete"
+                    [indeterminate]="someComplete()"
+                    (change)="setAll($event.checked)">
+        {{task.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task.subtasks;let i=index ">
+          <mat-checkbox value = {{subtask.value}}
+                        checked={{subtask.completed}}
+                        (change)="updateForm($event, i)">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+</ng-container>

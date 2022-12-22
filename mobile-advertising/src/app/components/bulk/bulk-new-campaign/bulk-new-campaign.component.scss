@@ -1,0 +1,63 @@
+mat-toolbar{
+    background-color: black;
+  }
+  .icon {
+    background-color: white;
+    margin-right: 5px;
+  }
+  .reset-icon{
+    width:25px;
+  }
+  
+  .orange-logo {
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-action-buttons {
+      padding-bottom: 20px;
+      color: black;
+    }
+    
+    .example-headers-align .mat-expansion-panel-header-description {
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .example-headers-align .mat-form-field + .mat-form-field {
+      margin-left: 8px;
+    }
+  
+  .selection-criteria{
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right:250px;
+  }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  
+  .next-button-container { 
+    margin-top: 20px;
+    margin-bottom:20px;
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+  }
+  
+  .logo{
+    cursor:pointer
+  }
+
+  

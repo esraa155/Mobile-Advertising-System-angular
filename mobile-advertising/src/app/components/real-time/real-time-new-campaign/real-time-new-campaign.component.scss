@@ -1,0 +1,86 @@
+
+  .example-action-buttons {
+    padding-bottom: 20px;
+    color: black;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+/////////////////////////////////////////////////////////////////////////////////
+
+mat-card-title{
+  margin-bottom: 25px;
+  margin-top: 5px;
+}
+
+
+.cards-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+.card {
+  max-width: 800px;
+  min-width: 800px;
+  margin-bottom: 50px;
+}
+
+.form-field-full{
+  width:100%;
+}
+
+.form-field-half{
+  margin-right: 10px;
+}
+
+.form-field-one-third{
+  margin-right: 10px;
+}
+
+.action-button{
+  min-width: 40px;
+  max-width: 40px;
+  margin-bottom: 20px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.mat-icon{
+height:25px !important;
+  width:25px !important;
+  margin: -10px;
+}
+
+
+.sms-message-criteria{
+background-color: black;
+margin-left:-16px;
+margin-right:-16px;
+height:60px;
+flex: "row";
+align-items: center;
+flex-direction: row;
+justify-content: space-evenly;
+}
+
+.sms-message-criteria-font{
+color: white;
+}
+
+h4{
+margin:0;
+margin-bottom:5px;
+padding: 0;
+}
+
+

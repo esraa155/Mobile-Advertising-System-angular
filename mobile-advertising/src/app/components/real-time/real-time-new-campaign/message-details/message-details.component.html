@@ -1,0 +1,42 @@
+<ng-container [formGroup] = "realTimeForm">
+    <mat-card-content fxLayout="column" fxFlexAlign="center">
+        <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+            <mat-label>Campagin SMS Body</mat-label>
+                <textarea  matInput 
+                value = {{smsBody}}
+                style="margin: 0px;"
+                          cdkTextareaAutosize
+                          formControlName="smsBody"
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="10"
+                          cdkAutosizeMaxRows="40"></textarea>
+        </mat-form-field>
+        
+        <mat-form-field  fxFlexAlign="stretch" appearance="fill">
+            <mat-label>Campagin Description</mat-label>
+            <textarea  matInput
+                        fxFlexAlign="stretch"
+                        cdkTextareaAutosize
+                        formControlName="smsDescription"
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="2"
+                        cdkAutosizeMaxRows="10"></textarea>
+            </mat-form-field>
+    
+        <div fxLayout="row">
+            <mat-form-field style="flex: 1 0 70%" class="col-lg-5" class ="form-field-one-third" appearance="fill">
+                <mat-label>Test Dial</mat-label>
+                <span matPrefix>+20 &nbsp;</span>
+                <input type="tel" type="number" matInput placeholder="1234567890" [formControl] = "testDial" >
+                <mat-error *ngIf="testDial.invalid">Minimum mix is ​​100</mat-error>
+            </mat-form-field>
+    
+            <button mat-stroked-button class="primary-button" style="flex: 1 0 8%;height: 54px;">Test Dial</button>    
+        </div>
+    
+        <mat-card-actions>
+            <app-sms-footer [smsBody]="smsBody"></app-sms-footer>
+        </mat-card-actions>
+    
+    </mat-card-content> 
+</ng-container>

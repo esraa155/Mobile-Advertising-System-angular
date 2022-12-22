@@ -1,0 +1,12 @@
+<div class="full-width">
+  <mat-form-field styles="width:100%;" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input [(ngModel)]="senderName" matInput>
+  </mat-form-field> 
+</div>
+
+
+<div  style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
+    <button  class="save" mat-stroked-button class="primary-button" (click)="onSave()" >Save</button>
+    <button calss="cancel" mat-stroked-button class="primary-button" (click)="onCancel()" >Cancel</button>
+</div>

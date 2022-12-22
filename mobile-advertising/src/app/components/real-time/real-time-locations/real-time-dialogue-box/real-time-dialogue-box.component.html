@@ -1,0 +1,16 @@
+<div>
+    
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+      </tr>
+    </table>
+  <input style="margin-bottom:20px ;" class="ng-hide" id="input-file-id" multiple type="file" />
+  
+  </div>
+  <div  style="margin-bottom: 20px;" fxLayout="row" fxLayoutAlign="space-evenly center"> 
+      <button  class="save" mat-button (click)="onNoClick()" [routerLink]="'/real-time-locations'">Save</button>
+      <button calss="cancel" mat-button (click)="onNoClick()" [routerLink]="'/real-time-locations'">Cancel</button>
+  </div>

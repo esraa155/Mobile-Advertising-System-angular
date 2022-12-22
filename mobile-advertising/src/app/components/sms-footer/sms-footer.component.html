@@ -1,0 +1,5 @@
+<div class="sms-message-criteria" fxLayout="row" fxfxFlexAllign="center" style="text-align: center;">
+    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >SMS Enconding: ASCII(160/SMS)</h4>
+    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Characters Count: {{smsLength()}}/160</h4>
+    <h4 class="sms-message-criteria-font" fxfxFlexAllign="center" >Messages Count: {{ceil(smsLength()/160) === 0 ? 1 : ceil(smsLength()/160)}}</h4>
+</div>

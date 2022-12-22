@@ -1,0 +1,12 @@
+<ng-container [formGroup]="bulkForm">
+  <section class="user-plan-section">
+    <span> Subscriber Type: </span>
+    <mat-checkbox class="margin" *ngFor="let data of subscriberTypes; let i=index" [value]="data.value" (change)="onCheckboxChange($event, 'subscriberType')">{{data.name}}</mat-checkbox>
+  </section>
+
+ 
+  <section class="user-plan-section">
+    <span> Service Type: </span>
+    <mat-checkbox class="margin" *ngFor="let data of serviceTypes; let i=index" [value]="data.value" (change)="onCheckboxChange($event, 'serviceType')">{{data.name}}</mat-checkbox>
+  </section> 
+</ng-container>

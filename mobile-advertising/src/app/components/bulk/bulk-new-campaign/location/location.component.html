@@ -1,0 +1,53 @@
+
+
+    <div class="expansion-panel-content" > 
+        <mat-form-field class="form-field" appearance="fill" style="flex: 1 0 100%">
+            <mat-label>Search for a location</mat-label>
+            <input matInput type="text" [(ngModel)]="value" (ngModelChange)="value=$event">
+            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>      
+    <ng-container [formGroup] = "bulkForm">
+        <mat-form-field appearance="fill" class="one-third">
+            <mat-label>Governorate</mat-label>
+            <mat-select [formControl]="selectedGovernorates" multiple>
+            <mat-select-trigger>
+                {{selectedGovernorates.value?.[0] || ''}}
+                <span *ngIf="(selectedGovernorates.value?.length || 0) > 1" class="additional-selection">
+                (+{{(selectedGovernorates.value?.length || 0) - 1}} {{selectedGovernorates.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let governorate of governorateList | locationSearch: value " [value]="governorate">{{governorate}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="one-third">
+            <mat-label>Admin Section</mat-label>
+            <mat-select [formControl]="selectedAdminSections" multiple>
+            <mat-select-trigger>
+                {{selectedAdminSections.value?.[0] || ''}}
+                <span *ngIf="(selectedAdminSections.value?.length || 0) > 1" class="additional-selection">
+                (+{{(selectedAdminSections.value?.length || 0) - 1}} {{selectedAdminSections.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let adminSection of adminSectionList |  locationSearch: value " [value]="adminSection">{{adminSection}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" class="last-item">
+            <mat-label>Sheiakha</mat-label>
+            <mat-select [formControl]="selectedSheiakhas"  multiple>
+            <mat-select-trigger>
+                {{selectedSheiakhas.value?.[0] || ''}}
+                <span *ngIf="(selectedSheiakhas.value?.length || 0) > 1" class="additional-selection">
+                (+{{(selectedSheiakhas.value?.length || 0) - 1}} {{selectedSheiakhas.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let sheiakha of sheiakhaList | locationSearch: value" [value]="sheiakha">{{sheiakha}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </ng-container>
+    </div>
+
+

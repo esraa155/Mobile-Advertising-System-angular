@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+    <app-header [title] = "'Mobile Advertising System - New Real-time Campaign'"></app-header>
+    
+    <ng-container [formGroup] = "realTimeForm">
+        <div class= "cards-container"  fxLayoutGap="10px" fxLayoutGap.xs="0" >
+            <mat-card fxFlexAlign="center"  [fxFlex] class="card">
+                <mat-card-title>Sender Data</mat-card-title>
+                <app-sender-data>
+                </app-sender-data>
+            </mat-card>
+    
+    
+    
+            <mat-card fxFlexAlign="center" class="card">
+                <mat-card-title>Campagin Details</mat-card-title>
+               <app-campagin-details formGroupName="campaignDetails">
+               </app-campagin-details>
+            </mat-card>
+    
+    
+            <mat-card fxFlexAlign="center" [fxFlex] class="card" >
+                <mat-card-title>SMS Message Details</mat-card-title>
+                <app-message-details formGroupName="smsDetails"></app-message-details>
+            </mat-card>   
+        </div>
+    
+        <div style="margin-bottom: 20px;text-align: center;" > 
+            <button fxfxFlexAllign="center" mat-stroked-button class="primary-button" [routerLink]="'/home'">Create</button>
+        </div>
+    
+    </ng-container>
+    
+</body>
+</html>

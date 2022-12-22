@@ -1,0 +1,72 @@
+.containers{
+    margin: 250px 200px 0 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.container{
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.container-title{
+    margin-top: 15px;
+    font-size: 21px;
+    color: white;
+}
+
+.title-line{
+    width: 99.9%;
+    size: 0.1;
+    color:white;
+    background-color:white;
+    border-width:0.1;
+    margin-top: 15px;
+}
+
+.buttons-container{
+    height: 50px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    color: white;
+}
+
+.button-and-icon{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(255, 102, 0);
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;  
+    cursor: pointer;
+}
+
+.buttons-container :hover{
+    background-color: rgb(214, 86, 0);
+}
+
+.icon{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    background-color: black;
+    border-radius: 20px;
+    height:35px
+}
+
+.icon :hover{
+    background-color: blue;
+}
